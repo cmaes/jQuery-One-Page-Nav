@@ -42,6 +42,7 @@
 			filter: '',
 			scrollSpeed: 750,
 			scrollThreshold: 0.5,
+                        scrollOffset: 0,
 			begin: false,
 			end: false,
 			scrollChange: false
@@ -202,7 +203,7 @@
 			var offset = $(target).offset().top;
 
 			$('html, body').animate({
-				scrollTop: offset
+				scrollTop: (offset - this.config.scrollOffset)
 			}, this.config.scrollSpeed, this.config.easing, callback);
 		},
 
